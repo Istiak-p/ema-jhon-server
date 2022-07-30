@@ -10,13 +10,13 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.swu9d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const uri = "mongodb+srv://ema-jhon:sK2wWcRBPhZh6p2Z@cluster0.txlus.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
+console.log(uri);
 async function run() {
     try {
         await client.connect();
-        const database = client.db('online_shop');
+        const database = client.db('online_bazzar');
         const productCollection = database.collection('products');
         const orderCollection = database.collection('orders');
 
